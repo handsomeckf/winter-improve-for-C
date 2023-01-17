@@ -1,0 +1,6 @@
+﻿  源.cpp
+E:\code\GithubF\winter-improve-for-C\my_string\my_string\源.cpp(65,20): warning C4018: “<”: 有符号/无符号不匹配
+E:\code\GithubF\winter-improve-for-C\my_string\my_string\源.cpp(75,21): warning C4018: “<”: 有符号/无符号不匹配
+E:\code\GithubF\winter-improve-for-C\my_string\my_string\源.cpp(82,21): warning C4018: “<”: 有符号/无符号不匹配
+E:\code\GithubF\winter-improve-for-C\my_string\my_string\源.cpp(88,21): warning C4018: “<”: 有符号/无符号不匹配
+  my_string.vcxproj -> E:\code\GithubF\winter-improve-for-C\my_string\Debug\my_string.exe

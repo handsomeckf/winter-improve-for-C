@@ -1,0 +1,6 @@
+﻿  源.c
+E:\code\GithubF\winter-improve-for-C\jingjiezhizhen\jingjiezhizhen\源.c(10,28): warning C4047: “函数”:“const char *”与“char (*)[6]”的间接级别不同
+E:\code\GithubF\winter-improve-for-C\jingjiezhizhen\jingjiezhizhen\源.c(10,24): warning C4024: “strlen”: 形参和实参 1 的类型不同
+E:\code\GithubF\winter-improve-for-C\jingjiezhizhen\jingjiezhizhen\源.c(11,32): warning C4047: “函数”:“const char *”与“char (*)[6]”的间接级别不同
+E:\code\GithubF\winter-improve-for-C\jingjiezhizhen\jingjiezhizhen\源.c(11,29): warning C4024: “strlen”: 形参和实参 1 的类型不同
+  jingjiezhizhen.vcxproj -> E:\code\GithubF\winter-improve-for-C\jingjiezhizhen\Debug\jingjiezhizhen.exe
