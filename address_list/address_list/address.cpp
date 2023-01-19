@@ -8,25 +8,38 @@ void manu() {
 	printf("******5.show       6.clear*******\n");
 	printf("******7.order             *******\n");
 }
-
-void Init(list* head) {
-	list* tem = head;
-	for (int i = 0; i < 1000; i++) {
-		*tem->address = { 0 };
-		*tem->name = { 0 };
-		*tem->tel = { 0 };
-		*tem->sex = { 0 };
-		tem->age = 0;
-		tem++;
+void Check(total* head) {
+	if (head->capacity == 0) {
+		head->contest = (list*)calloc(2,sizeof(list) );
+		head->capacity = 2;
+	/*	for (int i = 0; i < 2; i++) {
+			head->contest[i].age = 0;
+			*(head->contest[i].address) = { 0 };
+			*(head->contest[i].name) = { 0 };
+			*(head->contest[i].sex) = { 0 };
+			*(head->contest[i].tel) = { 0 };
+		}*/
 	}
+	else if(head->capacity==head->num&&head->capacity!=0)
+	{	list *tem = (list*)realloc(head->contest,(head->capacity+3)*sizeof(list));
+		for (int i = head->capacity; i < head->capacity+2; i++) {
+			head->contest[i].age = 0;
+			*(head->contest[i].address) = { 0 };
+			*(head->contest[i].name) = { 0 };
+			*(head->contest[i].sex) = { 0 };
+			*(head->contest[i].tel) = { 0 };
+		}
+		head->capacity += 3;
+	}
+}
+void Init(total* head) {
+	head->capacity = 0; 
+	head->num = 0;
+	Check(head);
 }
 void insert(total* head) {
 	assert(head);
-	if (head->num == 1000) {
-		printf("通讯录已满");
-		return;
-	}
-	else {
+	Check(head);
 		do {
 			printf("请输入姓名>");
 		} while (scanf("%s", head->contest[head->num].name)==0);
@@ -40,10 +53,10 @@ void insert(total* head) {
 		scanf("%s", head->contest[head->num++].tel);
 		return;
 	}
-}
 
 void search(total* head) {
 	char tem[20] = {0};
+	int flag = 0;
 	printf("请输入想要搜索的人的名字>");
 		scanf("%s", tem);
 		for (int i=0; i < head->num; i++) {
@@ -52,9 +65,11 @@ void search(total* head) {
 				printf("%-10s%-5s%-10s%-15s%-10s\n", "名字", "年龄", "性别", "电话", "地址");
 				printf("%-10s%-5d%-10s%-15s%-10s\n", head->contest[i].name, head->contest[i].age,
 					head->contest[i].sex, head->contest[i].tel, head->contest[i].address);
+				flag = 1;
 				break;
 			}
 	}
+		if(flag==0)
 		printf("没有这个人哟~");
 }
 

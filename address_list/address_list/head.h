@@ -13,12 +13,13 @@ typedef struct list {
 }list;
 
 typedef struct total {
-	list contest[1000];
+	list *contest;
 	int num;
-}total;
+	int capacity;
+}total; 
 void manu();
 
-void Init(list* head);
+void Init(total* head);
 
 void insert(total* head);
 

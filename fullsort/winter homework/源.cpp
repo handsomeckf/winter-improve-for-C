@@ -98,11 +98,62 @@
 //    }
 //    return 0;
 //}
-int main() {
-	unsigned int i;
-	for (i = 9; i >= 0; i--)
-	{
-		printf("%u\n", i);
-	}
-}
+//int main() {
+//	unsigned int i;
+//	for (i = 9; i >= 0; i--)
+//	{
+//		printf("%u\n", i);
+//	}
+//}
 
+//int main() {
+//	int arr[13] = { 5,5,1,2,3,4,8,1,2,3,4,8,6 };
+//	for (int i = 0; i < sizeof(arr) / sizeof(arr[0])-1; i++) {
+//		for (int j = 0; j < sizeof(arr) / sizeof(arr[0]) - 1 - i; j++) {
+//			if (arr[j] > arr[j + 1]) {
+//				int tem = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tem;
+//			}
+//		}
+//	}
+//	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i ++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i += 2) {
+//		if (arr[i] == arr[i + 1]) {
+//			continue;
+//		}
+//		else {
+//			printf("%d ", arr[i]);
+//			break;
+//		}
+//	}
+//
+//}
+char* my_strncat(char* des, const char* source, int num) {
+	char* tem = des;
+	while (*des != '\0') {
+		des++;
+	}
+	for (int i = 0; i < num; i++) {
+		*des++ = *source++;
+	}
+	*des = '\0';
+	return des;
+}
+char* my_strncpy(char* des, const char* source, int num) {
+	char* tem = des;
+	for (int i = 0; i < num+1; i++) {
+		*des++ = *source++;
+	}
+	return des;
+}
+int main() {
+	char arr[] = "i love you";
+	char arr1[20] = "hello ";
+	my_strncat(arr1, arr, 10);
+	printf("%s", arr1);
+}
