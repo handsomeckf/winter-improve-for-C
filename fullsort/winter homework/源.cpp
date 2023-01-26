@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include <math.h>
 #include<stdlib.h>
+#include<string.h>
 //void swap(char* a, char* b) //½»»»´úÂë
 //{
 //	char temp = *a;
@@ -151,9 +152,30 @@ char* my_strncpy(char* des, const char* source, int num) {
 	}
 	return des;
 }
+int my_atoi(const char* str) {
+	const char* tem = str;
+	int count = 0;
+	int flag = 0;
+	for (int i = 0; i < strlen(str); i++) {
+		if (*tem >= '0' && *tem <= '9') {
+			count = count * 10 + (*tem-48);
+			tem++;
+			flag = 1;
+		}
+		else if(count!=0||flag==1){
+			break;
+		}
+		else {
+			tem++;
+			continue;
+		}
+	}
+	return count;
+}
 int main() {
-	char arr[] = "i love you";
-	char arr1[20] = "hello ";
-	my_strncat(arr1, arr, 10);
-	printf("%s", arr1);
+	//char arr[] = "i love you";
+	//char arr1[20] = "hello ";
+	//my_strncat(arr1, arr, 10);
+	//printf("%s", arr1);
+	printf("%d", my_atoi("s35771fs0f16"));
 }
